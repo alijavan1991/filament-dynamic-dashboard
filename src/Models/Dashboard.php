@@ -203,8 +203,7 @@ class Dashboard extends Model
      * only appears when its `created_by` matches the current authenticated user
      * (no admin override — visibility is per-user even for editors).
      */
-    #[Scope]
-    protected function available(Builder $query, ?string $pageClass = null): void
+    public function scopeAvailable(Builder $query, ?string $pageClass = null): void
     {
         $userId = auth()->id();
 
