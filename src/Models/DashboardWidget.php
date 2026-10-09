@@ -121,8 +121,7 @@ class DashboardWidget extends Model
     /**
      * Scope to get active widgets for a specific dashboard.
      */
-    #[Scope]
-    protected function availableFor(Builder $query, Dashboard $dashboard): void
+    public function scopeAvailableFor(Builder $query, Dashboard $dashboard): void
     {
         $query
             ->where('dashboard_id', $dashboard->id)
